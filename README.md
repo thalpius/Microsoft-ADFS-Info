@@ -38,7 +38,8 @@ if ($HexstringFile -ne "") {
   }
 } else{
   write-host "Error, no input file specified"
-}```
+}
+```
 
 **Note**: Always use the last created private key.
 
