@@ -22,29 +22,20 @@ To convert the private key to the correct binary format on Windows use PowerShel
 $HexStringfile = "C:\users\thalpius\desktop\keyinput.bin"
 $OutputFile = "C:\users\thalpius\desktop\keyoutput.bin"
 
-if ($HexstringFile -ne "") {
-  $HexString = Get-Content -readcount 0 -path $HexStringFile
-  $HexString = $HexString[0]
-  $count = $hexString.length
-  $byteCount = $count/2
-  $bytes = New-Object byte[] $byteCount
-  $byte = $null
+$HexString = Get-Content -readcount 0 -path $HexStringFile
+$HexString = $HexString[0]
+$count = $hexString.length
+$byteCount = $count/2
+$bytes = New-Object byte[] $byteCount
+$byte = $null
 
-  $x = 0
-  for ( $i = 0; $i -le $count-1; $i+=2 )
-  { 
-    $bytes[$x] = [byte]::Parse($hexString.Substring($i,2), [System.Globalization.NumberStyles]::HexNumber)
-    $x += 1
-  }
-
-  if ($OutputFile -ne "") {
-    set-content -encoding byte $OutputFile -value $bytes
-  } else {
-    write-host "No output file specified"
-  }
-} else{
-  write-host "Error, no input file specified"
+$x = 0
+for ( $i = 0; $i -le $count-1; $i+=2 ) { 
+  $bytes[$x] = [byte]::Parse($hexString.Substring($i,2), [System.Globalization.NumberStyles]::HexNumber)
+  $x += 1
 }
+
+Set-Content -encoding byte $OutputFile -value $bytes
 ```
 
 **Note**: Always use the last created private key.
