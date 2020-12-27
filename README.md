@@ -2,7 +2,7 @@
 
 I created a small project to get the private keys for signing AD FS tokens, including the token-signing certificate.
 
-For more information about Kerberoasting, please check my blog post:  
+For more information about this attack, please check my blog post:  
 https://thalpius.com/2020/12/28/microsoft-defender-for-identity-adfsdump/
 
 # Usage ADFS-Info
