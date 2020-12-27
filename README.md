@@ -49,6 +49,6 @@ if ($HexstringFile -ne "") {
 
 **Note**: Always use the last created private key.
 
-# Screenshots
+# Screenshot
 
 ![Alt text](/Screenshots/ADFSInfo01.jpg?raw=true "ADFS Info")
