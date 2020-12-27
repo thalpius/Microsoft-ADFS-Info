@@ -10,6 +10,7 @@ namespace ADFS_Info
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("test");
         }
     }
 }
