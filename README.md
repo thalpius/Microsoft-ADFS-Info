@@ -11,7 +11,7 @@ Run the tool on the AD FS server with Domain Admin privileges or with the AD FS 
 ADFS-Info.exe
 ```
 
-To convert the private key to the correct binary format on Linix use xxd:  
+To convert the private key to the correct binary format on Linux use xxd:  
 ```bash
 xxd -r -p keyinput.bin keyoutput.bin
 ```
