@@ -12,7 +12,7 @@ Run the tool on the AD FS server with Domain Admin privileges or with the AD FS 
 To convert the private key to the correct binary format on *nix use xxd:  
 ```xxd -r -p keyinput.bin keyoutput.bin```
 
-To convert the private key to the correct binary format on *nix use PowerShell:  
+To convert the private key to the correct binary format on Windows use PowerShell:  
 
 ```PowerShell
 $HexStringfile = "C:\users\thalpius\desktop\keyinput.bin"
