@@ -7,7 +7,9 @@ https://thalpius.com/2020/12/28/microsoft-defender-for-identity-adfsdump/
 
 # Usage ADFS-Info
 Run the tool on the AD FS server with Domain Admin privileges or with the AD FS service account:  
-```ADFS-Info.exe```
+```cmd
+ADFS-Info.exe
+```
 
 To convert the private key to the correct binary format on *nix use xxd:  
 ```bash
