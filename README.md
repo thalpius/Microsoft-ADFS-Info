@@ -8,3 +8,6 @@ For more information about Kerberoasting, please check my blog post:
 # Usage ADFS-Info
 Run the tool on the AD FS server with Domain Admin privileges or with the AD FS service account:  
 ```ADFS-Info.exe```
+
+To convert the private key to the correct binary format use xxd:  
+```xxd -r -p keyinput.bin keyoutput.bin```
