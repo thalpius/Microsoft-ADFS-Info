@@ -1,6 +1,6 @@
 # ADFS-Info
 
-I created a small project to get the private keys for signing AD FS tokens, including the token-signing certificate.
+I created a small project to get the private keys and token-signing certificate from an AD FS server to create forged tokens.
 
 For more information about this attack, please check my blog post:  
 https://thalpius.com/2020/12/28/microsoft-defender-for-identity-adfsdump/
