@@ -46,13 +46,31 @@ namespace ADFS_Info
                 }
             }
         }
+
+        public static string GetADFSVersion()
+        {
+            string GetADFSVersionServer = "";
+            ManagementScope scope = new ManagementScope("\\\\localhost\\root/ADFS");
+            scope.Connect();
+            ObjectQuery query = new ObjectQuery("SELECT * FROM SecurityTokenService");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
+            ManagementObjectCollection queryCollection = searcher.Get();
+
+            foreach (ManagementObject m in queryCollection)
+            {
+                string ADFSVersion = m["ConfigurationDatabaseConnectionString"].ToString();
+                GetADFSVersionServer = Regex.Match(ADFSVersion, @"Catalog=(.+?);").Groups[1].Value;
+            }
+            return GetADFSVersionServer;
+        }
+
         private static void GetCertificate()
         {
             string connectionString = "server=\\\\.\\pipe\\MICROSOFT##WID\\tsql\\query;trusted_connection=true;";
             using (SqlConnection connection = new SqlConnection())
             {
                 connection.ConnectionString = connectionString;
-                string queryString = "SELECT ServiceSettingsData from AdfsConfigurationV3.IdentityServerPolicy.ServiceSettings";
+                string queryString = $"SELECT ServiceSettingsData from {GetADFSVersionServer}.IdentityServerPolicy.ServiceSettings";
                 connection.Open();
                 SqlCommand command = new SqlCommand(queryString, connection);
                 SqlDataReader reader = command.ExecuteReader();
@@ -70,6 +88,7 @@ namespace ADFS_Info
                 }
             }
         }
+
         static void Main(string[] args)
         {
             GetPrivateKeys();
