@@ -66,7 +66,6 @@ namespace ADFS_Info
 
         private static void GetCertificate()
         {
-            // lol
             string GetADFSVersionServer = GetADFSVersion();
             string connectionString = "server=\\\\.\\pipe\\MICROSOFT##WID\\tsql\\query;trusted_connection=true;";
             using (SqlConnection connection = new SqlConnection())
