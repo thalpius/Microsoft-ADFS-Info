@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> "This repo is now in 'Blue Screen' mode—archived and frozen in time!"
+
 # ADFS-Info
 
 I created a small project to get the private key and token-signing certificate from an AD FS server to create forged tokens.
